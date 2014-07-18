@@ -1,12 +1,12 @@
 enable :sessions
 
 get '/' do
-  @user ||= session[:email][:password]
-  erb :index
+  @user ||= session[:user_id]
+  erb :'/sessions/index'
 end
 
 post '/' do
-
+ redirect ('/')
 end
 
 get '/login' do
@@ -15,11 +15,13 @@ get '/login' do
 end
 
 post '/login' do
-  @user = User.authenticate(params[:user][:email], params[:user][:password])
-  if session[:email][:password] == @user
-    redirect '/'
-  else
+  auth = User.authenticate(params[:email], params[:password])
+  if auth == nil
     redirect '/login'
+  else
+    user = User.find_by(email: params[:email])
+    session[:user_id] = user.id
+    redirect '/'
   end
 end
 
