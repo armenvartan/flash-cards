@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :decks, through: :collaborators
+  has_many :collaborators
 
   validates_presence_of :name
   validates :email, uniqueness: true, format: { with: /\w+\.?\w+@\w{2,}\.\w{2,}/, message: "Please enter a valid email" }
