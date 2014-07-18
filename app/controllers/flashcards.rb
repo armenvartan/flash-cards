@@ -1,33 +1,27 @@
-get '/' do
-
-  erb :'flashcards/index'
-end
-
-get '/flashcards/create' do
-
+get '/decks/:did/flashcards/create' do
+  @deck = Deck.find(params[:did])
+  @deck.flashcards.create(params[:flashcard])
   erb :'flashcards/create'
 end
 
-get '/flashcards/:fid' do
-
-  erb :'flashcards/show'
+post '/decks/:did/flashcards/create' do
+  @deck = Deck.find(params[:did])
+  @deck.flashcards.create(params[:flashcard])
+  redirect "decks/#{@deck.id}"
 end
 
-get '/flashcards/:fid/edit' do
-
+get '/decks/:did/flashcards/:fid' do
+  @flashcard = Flashcard.find(params[:fid])
   erb :'flashcards/edit'
 end
 
-put '/flashcards/:fid' do
-  @flashcard = Flashcard.find(params[:fid])
-  @flashcard.update(params[:flashcard])
-
-  redirect "flashcards/#{@flashcard.id}"
+put '/decks/:did/flashcards/:fid' do
+  deck = Deck.find(params[:did])
+  flashcard = deck.flashcards.find(params[:fid])
+  flashcard.update(params[:flashcard])
+  redirect "/decks/#{deck.id}"
 end
 
-delete '/flashcards/:fid' do
-  @flashcard = Flashcard.find(params[:fid])
-  @flashcard.destroy
+delete '/decks/:did/flashcards/:fid' do
 
-  redirect '/'
 end

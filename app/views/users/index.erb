@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Hello, <%= @user.name %></h1>
+  <p>These are your flashcard decks</p>
+  <ul>
+    <% @user.decks.each do |deck| %>
+      <a href="#"><li><%= deck.title %></li></a>
+    <% end %>
+  </ul>
+</div>
+
+<a href="/"><button>Go to decks</button></a>
