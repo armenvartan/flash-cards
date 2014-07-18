@@ -1,0 +1,15 @@
+<div class="container">
+
+  <select>
+    <% @decks.topics.each do |topic| %>
+      <option value="<%=topic%>"><%=topic%></option>
+    <% end %>
+  </select>
+
+  <h3>Here are all of the flashcard decks</h3>
+  <ul>
+    <% @decks.each do |deck| %>
+      <li><a href="/decks/<%=deck.id%>"><%= deck.title %></a></li>
+    <% end %>
+  </ul>
+</div>
