@@ -7,6 +7,7 @@ gem 'pg'
 # Sinatra driver
 gem 'sinatra'
 gem 'sinatra-contrib'
+gem 'faker'
 
 # Use Thin for our web server
 gem 'thin'
@@ -27,5 +28,5 @@ end
 
 group :test, :development do
   gem 'factory_girl'
-  gem 'faker'
+
 end

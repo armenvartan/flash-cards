@@ -1,4 +1,4 @@
 class Collaborator < ActiveRecord::Base
-  has_many :users
-  has_many :decks
+  belongs_to :user
+  belongs_to :deck
 end
