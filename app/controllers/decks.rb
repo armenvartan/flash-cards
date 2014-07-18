@@ -1,6 +1,6 @@
 get '/' do
   @decks = Deck.all
-  erb :'decks/index'
+  erb :'sessions/index'
 end
 
 get '/decks/create' do
