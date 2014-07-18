@@ -10,7 +10,7 @@ post '/decks/:did/flashcards/create' do
   redirect "decks/#{@deck.id}"
 end
 
-get '/decks/:did/flashcards/:fid' do
+get '/decks/:did/flashcards/:fid/edit' do
   @flashcard = Flashcard.find(params[:fid])
   erb :'flashcards/edit'
 end
