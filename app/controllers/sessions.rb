@@ -29,7 +29,7 @@ get '/signup' do
 end
 
 post '/signup' do
-  @user = User.create(params[:user)
+  @user = User.create(params[:user])
   redirect('/')
 end
 
