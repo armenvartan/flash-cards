@@ -23,5 +23,8 @@ put '/decks/:did/flashcards/:fid' do
 end
 
 delete '/decks/:did/flashcards/:fid' do
-
+  deck = Deck.find(params[:did])
+  flashcard = deck.flashcards.find(params[:fid])
+  flashcard.destroy
+  redirect "/decks/#{deck.id}"
 end
