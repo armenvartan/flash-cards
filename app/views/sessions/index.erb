@@ -1,10 +1,13 @@
 <div class="container">
   <h1> Welcome to the dopest flashcards app</h1>
-  <form action="/login" method="GET">
-  <input type="submit" value="Login Here">
-  </form>
-  <br>
-  <form action="/signup" method="GET">
-  <input type="submit" value="Sign Up Here">
-  </form>
+
+  <div class="left_column">
+    <button id="login">Login Here</button>
+    <div id="login_form"><%= erb :'sessions/_login' %></div><br>
+  </div>
+
+  <div class="right_column">
+    <button id="sign_up">Sign up</button>
+    <div id="sign_up_form"><%= erb :'sessions/_sign_up' %></div>
+  </div>
 </div>
