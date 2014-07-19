@@ -1,24 +1,17 @@
-require 'Faker'
-
-users = []
-
 5.times do
-  users << User.create(name: Faker::Name.name, email:  Faker::Internet.email, password:  Faker::Number.number(5) )
+  User.create(name: Faker::Name.name, email:  Faker::Internet.email, password:  Faker::Number.number(5) )
 end
 
-decks = []
+5.times{ Category.create(topic: Faker::Lorem.word) }
 
-  users.each do |user|
-  decks << user.decks.create(topic: Faker::Lorem.word)
+User.all.each do |user|
+  user.decks.create(title: Faker::Lorem.word, category_id: Category.all.sample.id)
 end
 
-decks.each do |deck|
+Deck.all.each do |deck|
   10.times do
     deck.flashcards.create(question: Faker::Lorem.word, answer: Faker::Lorem.sentence)
   end
 end
-
-
-
 
 
