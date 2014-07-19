@@ -1,6 +1,6 @@
-get '/' do
+get '/decks' do
   @decks = Deck.all
-  erb :'sessions/index'
+  erb :'decks/index'
 end
 
 get '/decks/create' do
@@ -11,7 +11,7 @@ post '/decks/create' do
   deck = Deck.new(params[:deck])
   if deck.valid?
     deck.save
-    redirect '/'
+    redirect '/decks'
   else
     @errors = deck.errors
     erb :'decks/create'
@@ -32,12 +32,12 @@ put '/decks/:did' do
   @deck = Deck.find(params[:did])
   @deck.update(params[:deck])
 
-  redirect "decks/#{@deck.id}"
+  redirect "/decks/#{@deck.id}"
 end
 
 delete '/decks/:did' do
   @deck = Deck.find(params[:did])
   @deck.destroy
 
-  redirect '/'
+  redirect '/decks'
 end

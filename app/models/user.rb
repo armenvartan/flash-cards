@@ -7,12 +7,8 @@ class User < ActiveRecord::Base
   validates :password, format: { with: /\S{5,}/, message: "Please have a password with a minimum of 5 characters and no whitespace characters" }
 
   def self.authenticate(email, password)
-    user = User.find_by email: email
-    if user
-      return user if user.password == password
-    else
-      return nil
-    end
+    user = User.find_by(email: email)
+    return user if user.password == password
     nil
   end
 end

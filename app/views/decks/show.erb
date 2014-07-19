@@ -1,3 +1,7 @@
 <div class="container">
+  <h1><%= @deck.title %></h1>
 
+  <% @deck.flashcards.each do |flashcard| %>
+    <button class="flsahcard"><%= flashcard.question %></button><br>
+  <% end %>
 </div>
