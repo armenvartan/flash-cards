@@ -2,9 +2,24 @@
   margin: 20px auto;
   margin-top: 30px;
   width: 600px;
+  height: 600px;
   padding: 0px 20px 20px 20px;
   border: 1px solid black;
 }
 th {
   text-align: left;
+}
+
+.left_column {
+  margin-left: 20px;
+  position: block;
+  float: left;
+  width: 250px;
+}
+
+.right_column {
+  margin-left: 50px;
+  position: block;
+  float: left;
+  width: 250px;
 }
