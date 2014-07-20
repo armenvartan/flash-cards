@@ -5,40 +5,22 @@ get '/' do
   erb :'/sessions/index'
 end
 
-post '/' do
- redirect ('/')
-end
-
-get '/login' do
-
-  erb :'/sessions/_login'
-end
-
 post '/login' do
-  auth = User.authenticate(params[:email], params[:password])
-  if auth == nil
-    redirect '/login'
+  @user = User.find_by(email: params[:email])
+  if @user && @user.authenticate(params[:password])
+    session[:user_id] = @user.id
+    redirect '/decks'
   else
-    user = User.find_by(email: params[:email])
-    session[:user_id] = user.id
     redirect '/'
   end
 end
 
-get '/signup' do
-
-  erb :'/sessions/_sign_up'
-end
-
 post '/signup' do
   @user = User.create(params[:user])
-  redirect('/')
+  redirect('/decks')
 end
 
-
-
-post '/logout' do
-
+get '/logout' do
+  session.clear
   redirect '/'
 end
-
