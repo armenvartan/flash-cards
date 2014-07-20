@@ -9,8 +9,9 @@ get '/decks/create' do
 end
 
 post '/decks/create' do
-  @deck = Deck.new(params[:deck])
+  @deck = Deck.new(title: params[:title])
   if @deck.valid?
+    @deck.category = params[:category]
     @deck.save
   else
     @errors = @deck.errors
