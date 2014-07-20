@@ -11,7 +11,8 @@ end
 post '/decks/create' do
   @deck = Deck.new(title: params[:title])
   if @deck.valid?
-    @deck.category = params[:category]
+    category = Category.find_or_create_by(topic: params[:category])
+    @deck.category = category
     @deck.save
   else
     @errors = @deck.errors
