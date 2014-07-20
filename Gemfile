@@ -1,5 +1,6 @@
+require 'bcrypt'
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.1.1'
 
 # PostgreSQL driver
 gem 'pg'
@@ -9,6 +10,7 @@ gem 'debugger'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'faker'
+gem 'bcrypt'
 
 # Use Thin for our web server
 gem 'thin'
