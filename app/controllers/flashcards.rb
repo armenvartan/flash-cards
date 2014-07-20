@@ -16,7 +16,7 @@ get '/decks/:did/flashcards' do
 end
 
 get '/decks/:did/flashcards/:fid' do
-  @flashcard = Flashcard.find(params[:fid])
+  @flashcard = Flashcard.find(params[:fid].to_i+1)
   erb :'flashcards/show'
 end
 

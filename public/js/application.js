@@ -59,4 +59,16 @@ $(document).ready(function() {
       }
     })
   })
+
+  // flashcards#show so that question -> answer, and answer -> question
+  $('.answer').hide();
+
+  $('.question').on('click', function(e){
+    $('.question').hide();
+    $('.answer').show();
+  })
+  $('.answer').click(function(e){
+    $('.answer').hide();
+    $('.question').show();
+  })
 });

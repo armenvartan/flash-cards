@@ -1,3 +1,5 @@
 <div class="flashcard">
-  <%= @flashcard.question %>
+  <% @flashcard %>
+  <div class="question"><%= erb :'flashcards/_question' %></div>
+  <div class="answer"><%= erb :'flashcards/_answer' %></div>
 </div>

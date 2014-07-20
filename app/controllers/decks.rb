@@ -23,6 +23,7 @@ end
 
 get '/decks/:did' do
   @deck = Deck.find(params[:did])
+  @flashcard = @deck.flashcards.first
   erb :'decks/show'
 end
 

@@ -1,7 +1,7 @@
 <div class="container">
   <h1><%= @deck.title %></h1>
 
-  <% @deck.flashcards.each do |flashcard| %>
-    <button class="flashcard"><%= flashcard.question %></button><br>
-  <% end %>
+  <a href="/decks/<%=@deck.id%>/flashcards/<%=@flashcard.id%>"<button id="next">next</button></a>
+
+  <%= erb :'flashcards/show' %>
 </div>
