@@ -1,13 +1,18 @@
-get '/decks/:did/flashcards/create' do
-  @deck = Deck.find(params[:did])
-  @deck.flashcards.create(params[:flashcard])
-  erb :'flashcards/create'
-end
+# get '/decks/:did/flashcards/create' do
+#   @deck = Deck.find(params[:did])
+#   @deck.flashcards.create(params[:flashcard])
+#   erb :'flashcards/create'
+# end
 
 post '/decks/:did/flashcards/create' do
   @deck = Deck.find(params[:did])
-  @deck.flashcards.create(params[:flashcard])
-  redirect "decks/#{@deck.id}"
+  @flashcard = @deck.flashcards.create(params[:flashcard])
+  @flashcard.to_json
+end
+
+get '/decks/:did/flashcards/:fid' do
+  @flashcard = Flashcard.find(params[:fid])
+  erb :'flashcards/show'
 end
 
 get '/decks/:did/flashcards/:fid/edit' do

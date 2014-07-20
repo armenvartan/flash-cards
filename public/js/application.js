@@ -25,12 +25,37 @@ $(document).ready(function() {
       url: "/decks/create",
       data: $('#create_deck').serialize(),
       success: function(result){
-        console.log(result)
-        $('.left_column').html(result)
+        $('.form').html(result)
       },
       fail: function(){
         alert("Request failed")
       }
     })
   });
+
+  $('.form').on('submit', '#create_flashcard', function(e){
+    e.preventDefault();
+    // console.log($('input[name=deckId]').val())
+    var deckId = $('input[name=deckId]').val();
+    $.ajax({
+      type: "POST",
+      url: "/decks/"+deckId+"/flashcards/create",
+      data: $('#create_flashcard').serialize(),
+      dataType: "json",
+      fail: function(){
+        alert("We apologize for the error. We have failed our families. Committing harakiri")
+      },
+      success: function(result){
+        console.log(result);
+        console.log(result.id);
+        var fid = result.id
+        $.ajax({
+          url: "/decks/"+deckId+"/flashcards/"+fid,
+          success: function(response){
+            $('.right_column').append(response)
+          }
+        })
+      }
+    })
+  })
 });

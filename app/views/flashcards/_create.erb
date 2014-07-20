@@ -1,6 +1,6 @@
-<form action="/decks/<%=@deck.id%>/flashcards/create" method="post">
+<form id="create_flashcard" action="/decks/<%=@deck.id%>/flashcards/create" method="post">
+  <input type="hidden" name="deckId" value="<%=@deck.id%>">
   <input type="text" name="flashcard[question]" placeholder="Enter your question">
   <input type="text" name="flashcard[answer]" placeholder="Enter your answer">
   <input type="submit" value="Create flashcard">
 </form>
-
