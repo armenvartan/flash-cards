@@ -24,14 +24,14 @@ $(document).ready(function() {
     $.ajax({
       type: "POST",
       url: "/decks/create",
-      data: $('#create_deck').serialize()
-    })
-    .success(function(data){
-      $('.deck_form').hide();
-      $('.flashcard_form').show();
-    })
-      .fail(function(){
-      alert("Request failed")
+      data: $('#create_deck').serialize(),
+      success: function(data){
+        $('.deck_form').hide();
+        $('.flashcard_form').show();
+      },
+      fail: function(){
+        alert("Request failed")
+      }
     })
   });
 });

@@ -6,23 +6,21 @@ get '/' do
 end
 
 post '/login' do
-  auth = User.authenticate(params[:email], params[:password])
-  if auth == nil
-    @errors = 
-    erb :'sessions/index'
-  else
-    user = User.find_by(email: params[:email])
-    session[:user_id] = user.id
+  @user = User.find_by(email: params[:email])
+  if @user && @user.authenticate(params[:password])
+    session[:user_id] = @user.id
     redirect '/decks'
+  else
+    redirect '/'
   end
 end
 
 post '/signup' do
   @user = User.create(params[:user])
-  redirect('/')
+  redirect('/decks')
 end
 
-post '/logout' do
+get '/logout' do
   session.clear
   redirect '/'
 end
