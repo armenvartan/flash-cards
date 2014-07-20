@@ -9,6 +9,7 @@ gem 'debugger'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'faker'
+gem 'bcrypt'
 
 # Use Thin for our web server
 gem 'thin'
