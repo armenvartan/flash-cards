@@ -21,16 +21,16 @@ $(document).ready(function() {
 
   $('#create_deck').submit(function(e){
     e.preventDefault();
-    console.log($('#create_deck').serialize())
     $.ajax({
       type: "POST",
       url: "/decks/create",
       data: $('#create_deck').serialize()
-    }).success(function(data){
-        $('.deck_form').hide();
-        $('.flashcard_form').show();
-      })
-    .fail(function(){
+    })
+    .success(function(data){
+      $('.deck_form').hide();
+      $('.flashcard_form').show();
+    })
+      .fail(function(){
       alert("Request failed")
     })
   });
