@@ -17,7 +17,6 @@ $(document).ready(function() {
   });
 
   // decks#create things
-  $('.flashcard_form').hide();
 
   $('#create_deck').submit(function(e){
     e.preventDefault();
@@ -25,9 +24,9 @@ $(document).ready(function() {
       type: "POST",
       url: "/decks/create",
       data: $('#create_deck').serialize(),
-      success: function(data){
-        $('.deck_form').hide();
-        $('.flashcard_form').show();
+      success: function(result){
+        console.log(result)
+        $('.left_column').html(result)
       },
       fail: function(){
         alert("Request failed")

@@ -14,9 +14,10 @@ post '/decks/create' do
     category = Category.find_or_create_by(topic: params[:category])
     @deck.category = category
     @deck.save
+    erb :'flashcards/_create', layout: false
   else
-    @errors = @deck.errors
-    erb :'decks/create'
+    @errors = @deck.errors.messages
+    erb :'decks/_create_form', layout: false
   end
 end
 
