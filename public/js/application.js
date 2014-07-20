@@ -33,9 +33,10 @@ $(document).ready(function() {
     })
   });
 
+  // flashcards#create inside decks#create view
+
   $('.form').on('submit', '#create_flashcard', function(e){
     e.preventDefault();
-    // console.log($('input[name=deckId]').val())
     var deckId = $('input[name=deckId]').val();
     $.ajax({
       type: "POST",
@@ -46,13 +47,13 @@ $(document).ready(function() {
         alert("We apologize for the error. We have failed our families. Committing harakiri")
       },
       success: function(result){
-        console.log(result);
-        console.log(result.id);
-        var fid = result.id
         $.ajax({
-          url: "/decks/"+deckId+"/flashcards/"+fid,
+          url: "/decks/"+deckId+"/flashcards",
           success: function(response){
-            $('.right_column').append(response)
+            $('.right_column').html(response)
+          },
+          fail: function(){
+            alert("HARAKIRI!!!!")
           }
         })
       }

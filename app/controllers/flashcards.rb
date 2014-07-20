@@ -10,6 +10,11 @@ post '/decks/:did/flashcards/create' do
   @flashcard.to_json
 end
 
+get '/decks/:did/flashcards' do
+  @flashcards = Deck.find(params[:did]).flashcards
+  erb :'flashcards/index', layout: false
+end
+
 get '/decks/:did/flashcards/:fid' do
   @flashcard = Flashcard.find(params[:fid])
   erb :'flashcards/show'
