@@ -4,16 +4,16 @@ get '/decks' do
 end
 
 get '/decks/create' do
+  @deck = Deck.new
   erb :'decks/create'
 end
 
 post '/decks/create' do
-  deck = Deck.new(params[:deck])
-  if deck.valid?
-    deck.save
-    redirect '/decks'
+  @deck = Deck.new(params[:deck])
+  if @deck.valid?
+    @deck.save
   else
-    @errors = deck.errors
+    @errors = @deck.errors
     erb :'decks/create'
   end
 end

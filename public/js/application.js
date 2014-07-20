@@ -2,6 +2,8 @@ $(document).ready(function() {
   $('#login_form').hide();
   $('#sign_up_form').hide();
 
+  // Homepage Things
+
   $('#login').click(function(e){
     e.preventDefault();
     $(this).hide();
@@ -13,4 +15,9 @@ $(document).ready(function() {
     $(this).hide();
     $('#sign_up_form').show();
   })
+
+  // decks#create things
+
+  
+
 });
