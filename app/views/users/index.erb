@@ -4,7 +4,7 @@
   <p>These are your flashcard decks</p>
   <ul>
     <% @user.decks.each do |deck| %>
-      <a href="#"><li><%= deck.title %></li></a>
+      <a href="/decks/<%=deck.id%>"><li><%= deck.title %></li></a>
     <% end %>
   </ul>
 </div>
