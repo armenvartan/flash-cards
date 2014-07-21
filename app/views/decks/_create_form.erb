@@ -12,25 +12,22 @@
   <input class="button" type="submit" value="Create New Deck"><br></div>
 
 </form> -->
-<div id="wrapper">
 	<%= @errors if @errors %>
 
-  <form id="create_deck" action="/decks/create" class="login-form" action="" method="post">
+<form id="create_deck" action="/decks/create" class="login-form" action="" method="post">
 
-    <div class="header">
-    <h1>Create Deck</h1>
-    <span>Add a new topic and title for your deck!</span>
-    </div>
+  <div class="header">
+  <h1>Create Deck</h1>
+  <span>Add a new topic and title for your deck!</span>
+  </div>
 
-    <div class="content">
-    <input name="title" type="text" class="input title" placeholder="Title" />
-    <input name="category" type="text" class="input topic" placeholder="Topic" />
-    </div>
+  <div class="content">
+  <input name="title" type="text" class="input title" placeholder="Title" />
+  <input name="category" type="text" class="input topic" placeholder="Topic" />
+  </div>
 
-    <div class="footer">
-    <input type="submit" name="submit" value="Create New Deck" class="button" />
-    </div>
+  <div class="footer">
+  <input type="submit" name="submit" value="Create New Deck" class="button" />
+  </div>
 
-  </form>
-
-</div>
+</form>

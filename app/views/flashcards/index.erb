@@ -1,6 +1,9 @@
 <% @flashcards.each do |flashcard| %>
   <div class="created_flashcard">
-    <p>Question: <%= flashcard.question %></p>
-    <p>Answer: <%= flashcard.answer %></p>
+    <h4>Question:</h4>
+    <p><%= flashcard.question %></p>
+
+    <h4>Answer:</h4>
+    <p><%= flashcard.answer %></p>
   </div>
 <% end %>
