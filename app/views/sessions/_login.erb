@@ -1,5 +1,29 @@
-<form action="/login" method="POST">
+<!-- <form action="/login" method="POST">
   Email: <input type="text" name="email"><br>
   Password: <input type="password" name= "password"><br>
   <input type="submit" value="Login">
 </form>
+ -->
+<div id="wrapper">
+
+  <form action="/login" name="login-form" class="login-form" action="" method="post">
+
+    <div class="header">
+    <h1>Login</h1>
+    <span>Fill out the form below to login.</span>
+    </div>
+
+    <div class="content">
+    <input name="username" type="text" class="input username" placeholder="Username" />
+    <div class="user-icon"></div>
+    <input name="password" type="password" class="input password" placeholder="Password" />
+    <div class="pass-icon"></div>
+    </div>
+
+    <div class="footer">
+    <input type="submit" name="submit" value="Login" class="button" />
+    </div>
+
+  </form>
+
+</div>
