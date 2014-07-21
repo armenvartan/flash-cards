@@ -28,9 +28,13 @@ th {
 }
 
 .created_flashcard {
+  margin-top: 100px;
   height: 200px;
   width: 300px;
+  text-align: center;
   border: 1px solid black;
+  padding: 15px;
+  line-height: 80px;
 }
 /* Starter CSS for Flyout Menu */
 #cssmenu,
