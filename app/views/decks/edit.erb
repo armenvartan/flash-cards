@@ -1,0 +1,15 @@
+<%= erb :'users/_navbar' %>
+
+<div class="container">
+  <h1 id="show_deck"><%= @deck.title %></h1>
+
+  <div id="delete">-</div>
+  <div class="clear"></div>
+  <div class="left_column">
+    <%= erb :'flashcards/_edit_form' %>
+  </div>
+
+  <div class="right_column">
+    <%= erb :'flashcards/_edit' %>
+  </div>
+</div>

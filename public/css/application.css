@@ -3,7 +3,7 @@
   margin-top: 30px;
   width: 700px;
   height: 800px;
-  padding: 0px 20px 20px 20px;
+  padding: 20px 20px 20px 20px;
   border: 1px solid black;
   background-color: #f1f2f2;
   font-family: 'Ubuntu', sans-serif
@@ -419,8 +419,7 @@ FOOTER
 }
 
 #next {
-  margin-left: auto;
-  margin-right: auto;
+  margin: 20px auto 0px auto;
   width: 100%;
   padding: 10px;
   background-color: #56c2e1;
@@ -449,4 +448,51 @@ FOOTER
 
 #create_deck {
   border-radius: 0;
+}
+
+#show_deck {
+  width: 600px;
+  margin-left: 250px;
+  text-align: center;
+  display: inline;
+}
+
+#edit {
+  display: block;
+  float: right;
+  width: 15px;
+  border: 1px solid white;
+  border-radius: 100px;
+  text-align: center;
+  color: #56c2e1;
+}
+
+#delete {
+  display: block;
+  float: right;
+  width: 15px;
+  border: 1px solid white;
+  border-radius: 100px;
+  text-align: center;
+  color: #56c2e1;
+}
+
+.clear {
+  width: 600px;
+  clear: both;
+  margin-bottom: 20px;
+}
+
+.edit_flashcard {
+  text-align: center;
+  margin-left: 10px;
+  color: #f1f2f2;
+  height: 200px;
+  width: 380px;
+  border: 1px solid white;
+  background-color: #56c2e1;
+}
+
+.edit_flashcard h4 {
+  margin: 20px 0 10px;
 }

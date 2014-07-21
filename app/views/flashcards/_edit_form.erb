@@ -1,0 +1,19 @@
+<%= @errors if @errors %>
+
+<form id="create_deck" action="/decks/create" class="login-form" action="" method="post">
+
+<div class="header">
+<h1>Edit Flashcard</h1>
+<span>Make it the ultimate flashcard deck!</span>
+</div>
+
+<div class="content">
+<input name="question" type="text" class="input title" placeholder="Enter question" />
+<input name="answer" type="text" class="input topic" placeholder="Enter answer" />
+</div>
+
+<div class="footer">
+<input type="submit" name="submit" value="Create New Deck" class="button" />
+</div>
+
+</form>

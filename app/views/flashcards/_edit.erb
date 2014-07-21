@@ -1,0 +1,9 @@
+<% @flashcards.each do |flashcard| %>
+  <div class="edit_flashcard">
+    <h4>Question:</h4>
+    <p><%= flashcard.question %></p>
+
+    <h4>Answer:</h4>
+    <p><%= flashcard.answer %></p>
+  </div>
+<% end %>

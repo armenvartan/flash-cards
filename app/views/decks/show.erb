@@ -1,7 +1,10 @@
 <%= erb :'users/_navbar' %>
 
 <div class="container">
-  <h1>Deck: <%= @deck.title %></h1>
+  <h1 id="show_deck">Deck: <%= @deck.title %></h1>
+  <% if @deck.users.include?(@user) %>
+    <a href="/decks/<%=@deck.id%>/edit"><div id="edit">+</div></a>
+  <% end %>
 
   <a href="/decks/<%=@deck.id%>"><button id="next">Give me a flashcard!</button></a>
 

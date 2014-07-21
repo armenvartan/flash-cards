@@ -24,13 +24,16 @@ post '/decks/create' do
 end
 
 get '/decks/:did' do
+  @user = User.find(session[:user_id])
   @deck = Deck.find(params[:did])
+  p @deck.users.include?(@user)
   @flashcard = @deck.flashcards.sample
   erb :'decks/show'
 end
 
 get '/decks/:did/edit' do
   @deck = Deck.find(params[:did])
+  @flashcards = @deck.flashcards
   erb :'decks/edit'
 end
 
