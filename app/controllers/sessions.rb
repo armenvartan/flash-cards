@@ -2,7 +2,11 @@ enable :sessions
 
 get '/' do
   @user ||= session[:user_id]
-  erb :'/sessions/index'
+  if logged_in?
+    redirect "/users/#{@user}"
+  else
+    erb :'/sessions/index'
+  end
 end
 
 post '/login' do
