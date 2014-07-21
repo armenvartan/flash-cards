@@ -1,4 +1,4 @@
-<form id="next" action="#" method="get">
+<form id="next" action="/decks/<%=@deck.id%>" method="get">
   <input type="hidden" name="deckId" value="<%=@deck.id%>">
   <input type="hidden" name="flashcardId" value="<%=@flashcard.id%>">
   <input type="submit" value="Next flashcard">

@@ -73,18 +73,20 @@ $(document).ready(function() {
   })
 
   // decks#show moving from one flashcard to the next
+  // if only it worked
 
-  $('#next').click(function(e){
-    e.preventDefault()
-    var deckId = $('input[name=deckId]').val();
-    var flashcardId = $('input[name=flashcardId]').val();
-    $.ajax({
-      url: '/decks/'+deckId+'/flashcards/'+flashcardId,
-      data: $('#next').serialize(),
-      success: function(response){
-        $('.card').html(response)
-      }
-    })
-  })
-
+  // $('#next').click(function(e){
+  //   e.preventDefault()
+  //   var deckId = $('input[name=deckId]').val();
+  //   var flashcardId = $('input[name=flashcardId]').val();
+  //   console.log(flashcardId)
+  //   $.ajax({
+  //     url: '/decks/'+deckId+'/flashcards/'+flashcardId,
+  //     data: $('#next').serialize(),
+  //     success: function(response){
+  //       console.log(response)
+  //       $('.card').html(response)
+  //     }
+  //   })
+  // })
 });
