@@ -89,4 +89,13 @@ $(document).ready(function() {
   //     }
   //   })
   // })
+
+  // flashcards#edit
+
+  $('.right_edit_column').on('click', '.edit_flashcard', function(e){
+    e.preventDefault();
+    console.log($('.right_column').children);
+    var flashcardId = $('input[name=flashcardId]').val();
+    console.log(flashcardId)
+  })
 });

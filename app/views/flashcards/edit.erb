@@ -1,6 +1,19 @@
-<form action="/decks/<%=@deck.id%>/flashcards/create" method="post">
-  <input type="hidden" name="_method" value="put">
-  <input type="text" name="flashcard[question]" placeholder="Enter your question">
-  <input type="text" name="flashcard[answer]" placeholder="Enter your answer">
-  <input type="submit" value="Edit flashcard">
-</form>
+<%= erb :'users/_navbar' %>
+
+<div class="container">
+  <h1 id="show_deck"><%= @deck.title %></h1>
+
+  <div id="delete"><form action="/decks/<%=@deck.id%>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="del">
+  </form></div>
+
+  <div class="clear"></div>
+  <div class="left_column" id="edit_left">
+    <%= erb :'flashcards/_edit_form' %>
+  </div>
+
+  <div class="right_edit_column">
+    <%= erb :'flashcards/_edit' %>
+  </div>
+</div>

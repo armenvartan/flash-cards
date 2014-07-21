@@ -1,0 +1,12 @@
+<% @flashcards.each do |flashcard| %>
+  <a href="/decks/<%=flashcard.deck.id%>/flashcards/<%=flashcard.id%>/edit"><div class="edit_flashcard">
+    <form class="flashcard_id" action="#" method="post">
+      <input type="hidden" name="flashcardId" value="<%=flashcard.id%>">
+    </form>
+    <h4>Question:</h4>
+    <p><%= flashcard.question %></p>
+
+    <h4>Answer:</h4>
+    <p><%= flashcard.answer %></p>
+  </div></a>
+<% end %>
