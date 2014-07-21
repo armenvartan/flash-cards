@@ -1,11 +1,18 @@
-<div class="container">
+<%= erb :'users/_navbar' %>
+<div class="container" id="home">
   <h1>Hello, <%= @user.name %></h1>
   <p>These are your flashcard decks</p>
-  <ul>
-    <% @user.decks.each do |deck| %>
-      <a href="#"><li><%= deck.title %></li></a>
-    <% end %>
-  </ul>
+  <div id="all_decks">
+    <table>
+      <th>Deck</th><th>Category</th>
+      <% @user.decks.each do |deck| %>
+        <tr>
+          <td><a href="/decks/<%=deck.id%>"><%= deck.title %></a></td>
+          <td><%= deck.category.topic %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
 </div>
 
 <a href="/"><button>Go to decks</button></a>

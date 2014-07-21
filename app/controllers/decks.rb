@@ -9,11 +9,13 @@ get '/decks/create' do
 end
 
 post '/decks/create' do
+  @user = User.find(session[:user_id])
   @deck = Deck.new(title: params[:title])
   if @deck.valid?
     category = Category.find_or_create_by(topic: params[:category])
     @deck.category = category
     @deck.save
+    @deck.users << @user
     erb :'flashcards/_create', layout: false
   else
     @errors = @deck.errors.messages
@@ -23,6 +25,7 @@ end
 
 get '/decks/:did' do
   @deck = Deck.find(params[:did])
+  @flashcard = @deck.flashcards.sample
   erb :'decks/show'
 end
 

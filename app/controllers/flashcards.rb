@@ -1,9 +1,3 @@
-# get '/decks/:did/flashcards/create' do
-#   @deck = Deck.find(params[:did])
-#   @deck.flashcards.create(params[:flashcard])
-#   erb :'flashcards/create'
-# end
-
 post '/decks/:did/flashcards/create' do
   @deck = Deck.find(params[:did])
   @flashcard = @deck.flashcards.create(params[:flashcard])
@@ -21,6 +15,7 @@ get '/decks/:did/flashcards/:fid' do
 end
 
 get '/decks/:did/flashcards/:fid/edit' do
+  @deck = Deck.find(params[:did])
   @flashcard = Flashcard.find(params[:fid])
   erb :'flashcards/edit'
 end
