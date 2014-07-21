@@ -2,11 +2,14 @@
 .container {
   margin: 20px auto;
   margin-top: 30px;
-  width: 700px;
+  width: 725px;
   height: 800px;
   padding: 0px 20px 20px 20px;
   border: 1px solid black;
+  border-radius: 5px;
   background-color: #f1f2f2;
+  overflow-x: hidden;
+  overflow-y:auto; 
   font-family: 'Ubuntu', sans-serif
 }
 th {
@@ -17,14 +20,14 @@ th {
   margin-right: 4em;
   position: block;
   float: left;
-  width: 250px;
+  width: 231  px;
 }
 
 .right_column {
   margin-right: 5em;
   position: block;
   float: right;
-  width: 250px;
+  width: 231px;
 }
 
 .created_flashcard {
@@ -33,6 +36,7 @@ th {
   width: 300px;
   text-align: center;
   border: 1px solid black;
+  border-radius: 5px;
   padding: 15px;
   line-height: 80px;
 }
@@ -174,10 +178,10 @@ LOGIN FORM
 
 .login-form {
   width: 300px;
-  margin: 0 auto;
+  
   margin-right: 2em;
   position: relative;
-
+  margin-left: -20px;
   background: #f3f3f3;
   border: 1px solid #fff;
   border-radius: 5px;
