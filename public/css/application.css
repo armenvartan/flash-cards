@@ -496,3 +496,17 @@ FOOTER
 .edit_flashcard h4 {
   margin: 20px 0 10px;
 }
+
+#edit_left {
+  color: #56c2e1;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.right_edit_column {
+  margin-top: 20px;
+  margin-right: 5em;
+  position: block;
+  float: left;
+  width: 250px;
+}

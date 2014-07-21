@@ -16,14 +16,17 @@ end
 
 get '/decks/:did/flashcards/:fid/edit' do
   @deck = Deck.find(params[:did])
+  @flashcards = @deck.flashcards
   @flashcard = Flashcard.find(params[:fid])
   erb :'flashcards/edit'
 end
 
 put '/decks/:did/flashcards/:fid' do
-  deck = Deck.find(params[:did])
-  flashcard = deck.flashcards.find(params[:fid])
-  flashcard.update(params[:flashcard])
+  p "hello"
+  @deck = Deck.find(params[:did])
+  @flashcard = Flashcard.find(params[:fid])
+  @flashcard.update(params[:flashcard])
+  redirect "/decks/#{@deck.id}/edit"
 end
 
 delete '/decks/:did/flashcards/:fid' do

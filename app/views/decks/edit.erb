@@ -3,13 +3,16 @@
 <div class="container">
   <h1 id="show_deck"><%= @deck.title %></h1>
 
-  <div id="delete">-</div>
+  <div id="delete"><form action="/decks/<%=@deck.id%>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="del">
+  </form></div>
   <div class="clear"></div>
-  <div class="left_column">
-    <%= erb :'flashcards/_edit_form' %>
+  <div class="left_column" id="edit_left">
+    <p>Click on a flashcard to edit it!</p>
   </div>
 
-  <div class="right_column">
+  <div class="right_edit_column">
     <%= erb :'flashcards/_edit' %>
   </div>
 </div>
