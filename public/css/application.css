@@ -57,7 +57,7 @@ th {
 }
 #cssmenu ul {
   zoom: 1;
-  background: #a7bc7a url(images/pattern.png) top left repeat;
+  background: #56c2e1 url(images/pattern.png) top left repeat;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -83,10 +83,10 @@ th {
   text-decoration: none;
   color: #ffffff;
   text-shadow: 0 -1px 1px #586835;
-  border-right: 1px solid #839b4e;
+  border-right: 1px solid #ffffff;
 }
 #cssmenu a:hover {
-  color: #586835;
+  color: #0000CC;
   text-shadow: 0 1px 1px #bdcd9c;
 }
 #cssmenu li {
