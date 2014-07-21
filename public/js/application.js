@@ -61,8 +61,8 @@ $(document).ready(function() {
   })
 
   // flashcards#show so that question -> answer, and answer -> question
-  $('.answer').hide();
 
+  $('.answer').hide();
   $('.question').on('click', function(e){
     $('.question').hide();
     $('.answer').show();
@@ -71,4 +71,20 @@ $(document).ready(function() {
     $('.answer').hide();
     $('.question').show();
   })
+
+  // decks#show moving from one flashcard to the next
+
+  $('#next').click(function(e){
+    e.preventDefault()
+    var deckId = $('input[name=deckId]').val();
+    var flashcardId = $('input[name=flashcardId]').val();
+    $.ajax({
+      url: '/decks/'+deckId+'/flashcards/'+flashcardId,
+      data: $('#next').serialize(),
+      success: function(response){
+        $('.card').html(response)
+      }
+    })
+  })
+
 });

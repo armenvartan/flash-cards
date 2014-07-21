@@ -16,11 +16,12 @@ get '/decks/:did/flashcards' do
 end
 
 get '/decks/:did/flashcards/:fid' do
-  @flashcard = Flashcard.find(params[:fid].to_i+1)
+  @flashcard = Flashcard.find(params[:fid])
   erb :'flashcards/show'
 end
 
 get '/decks/:did/flashcards/:fid/edit' do
+  @deck = Deck.find(params[:did])
   @flashcard = Flashcard.find(params[:fid])
   erb :'flashcards/edit'
 end

@@ -1,7 +1,5 @@
 <div class="container">
   <h1><%= @deck.title %></h1>
 
-  <a href="/decks/<%=@deck.id%>/flashcards/<%=@flashcard.id%>"<button id="next">next</button></a>
-
-  <%= erb :'flashcards/show' %>
+  <div class="card"><%= erb :'flashcards/show' %></div>
 </div>
