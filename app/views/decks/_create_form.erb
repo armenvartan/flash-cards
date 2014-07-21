@@ -1,4 +1,4 @@
-<%= @errors if @errors %>
+<!-- <%= @errors if @errors %>
 
 <form id="create_deck" action="/decks/create" method="post" class="login-form"><br>
 	<div class="header">
@@ -10,9 +10,10 @@
 
   <div class="footer">
   <input class="button" type="submit" value="Create New Deck"><br></div>
-	
-</form>
-<!-- <div id="wrapper">
+
+</form> -->
+<div id="wrapper">
+	<%= @errors if @errors %>
 
   <form id="create_deck" action="/decks/create" class="login-form" action="" method="post">
 
@@ -22,8 +23,8 @@
     </div>
 
     <div class="content">
-    <input name="deck[title]" type="text" class="input title" placeholder="Title" />
-    <input name="deck[topic]" type="text" class="input topic" placeholder="Topic" />
+    <input name="title" type="text" class="input title" placeholder="Title" />
+    <input name="category" type="text" class="input topic" placeholder="Topic" />
     </div>
 
     <div class="footer">
@@ -32,4 +33,4 @@
 
   </form>
 
-</div> -->
+</div>
