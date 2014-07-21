@@ -1,6 +1,21 @@
-<form id="create_flashcard" action="/decks/<%=@deck.id%>/flashcards/create" method="post">
-  <input type="hidden" name="deckId" value="<%=@deck.id%>">
+<!-- <form id="create_flashcard" action="/decks//flashcards/create" method="post">
+  <input type="hidden" name="deckId" value="">
   <input type="text" name="flashcard[question]" placeholder="Enter your question">
   <input type="text" name="flashcard[answer]" placeholder="Enter your answer">
   <input type="submit" value="Create flashcard">
+</form> -->
+
+
+<form id="create_flashcard" action="/decks/<%=@deck.id%>/flashcards/create" method="post" class="login-form"><br>
+	<input type="hidden" name="deckId" value="<%=@deck.id%>">
+	<div class="header">
+		<h1>Create Flashcard</h1>
+	</div>
+	<div class="content">
+  <input class="input title" name="flashcard[question]" type="text" placeholder="Enter your question" />
+   <input class="input topic" name="flashcard[answer]" type="text" placeholder="Enter your answer" /></div>
+
+  <div class="footer">
+  <input class="button" type="submit" value="Create Flashcard"><br></div>
+	
 </form>
