@@ -1,7 +1,35 @@
 <%= @errors if @errors %>
 
-<form id="create_deck" action="/decks/create" method="post"><br>
-  Title: <input type="text" name="title"><br>
-  Category: <input type="text" name="category"><br>
-  <input type="submit" value="Create New Deck"><br>
+<form id="create_deck" action="/decks/create" method="post" class="login-form"><br>
+	<div class="header">
+		<h1>Create Deck</h1>
+	</div>
+	<div class="content">
+  <input class="input title" name="title" type="text" placeholder="Title" />
+   <input class="input topic" name="topic" type="text" placeholder="Topic" /></div>
+
+  <div class="footer">
+  <input class="button" type="submit" value="Create New Deck"><br></div>
+	
 </form>
+<!-- <div id="wrapper">
+
+  <form id="create_deck" action="/decks/create" class="login-form" action="" method="post">
+
+    <div class="header">
+    <h1>Create Deck</h1>
+    <span>Add a new topic and title for your deck!</span>
+    </div>
+
+    <div class="content">
+    <input name="deck[title]" type="text" class="input title" placeholder="Title" />
+    <input name="deck[topic]" type="text" class="input topic" placeholder="Topic" />
+    </div>
+
+    <div class="footer">
+    <input type="submit" name="submit" value="Create New Deck" class="button" />
+    </div>
+
+  </form>
+
+</div> -->
