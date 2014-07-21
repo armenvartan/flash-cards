@@ -1,12 +1,16 @@
-<div class="container">
+<%= erb :'users/_navbar' %>
+
+<div class="container" id="decks_home">
   <h3>Here are all of the flashcard decks</h3>
-  <table>
-    <th>Deck</th><th>Category</th>
-    <% @decks.each do |deck| %>
-      <tr>
-        <td><a href="/decks/<%=deck.id%>"><%= deck.title %></a></td>
-        <td><%= deck.category.topic %></td>
-      </tr>
-    <% end %>
-  </table>
+  <div id="all_decks">
+    <table>
+      <th>Deck</th><th>Category</th>
+      <% @decks.each do |deck| %>
+        <tr>
+          <td><a href="/decks/<%=deck.id%>"><%= deck.title %></a></td>
+          <td><%= deck.category.topic %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
 </div>
